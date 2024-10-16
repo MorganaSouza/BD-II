@@ -1,305 +1,385 @@
-  -- Comando SQL: DQL SELECT
-  
-  
+-- Comando SQL: DQL SELECT
+
 select * from funcionario;
 
-select cpf, nome, sexo, dataNasc, estadoCivil, email, ch, salario, comissao, dataAdm
+select cpf, nome, sexo, dataNasc, estadoCivil, email, ch, salario, comissao, dataAdm 
 	from funcionario;
-  
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
+
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario;
+    
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
 	from funcionario
 		order by nome desc;
         
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where sexo = 'F'
+			order by nome;        
+        
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where salario >= 3000 and
+			sexo = 'M'
+			order by nome;        
+        
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where dataAdm < '2020-03-04'
+			order by nome;        
+        
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where dataAdm >= '2020-06-01' and
+			dataAdm <= '2022-06-30'
+			order by nome;          
+        
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where dataAdm between '2020-06-01' and '2022-06-30'
+			order by nome;        
+        
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where salario between 4000 and 5000
+			order by nome;          
 
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
 	from funcionario
-    where sexo = 'F'
-		order by nome;
-        
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
+		where nome like "%Costa"
+			order by nome;    
+            
+            
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
 	from funcionario
-    where salario >= 3000 and
-		sexo = 'M'
-		order by nome;
-        
-        
-        
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
+		where nome like "Ana%"
+			order by nome;  
+            
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
 	from funcionario
-    where dataAdm < '2020-03-04'
-		order by nome;
-    
+		where nome like "%Ana%"
+			order by nome;
+            
+select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", ch "Carga-horária", salario "Salário", 
+    comissao "Comissão", dataAdm "Data de Admissão" 
+	from funcionario
+		where nome like "%Costa" or
+			nome like "%Silva" or
+            nome like "%Oliveira"
+			order by nome;
+            
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
+	from funcionario
+		order by salario+comissao desc;
 
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
 	from funcionario
-    where dataAdm >= '2020-06-01' and
-    dataAdm <= '2022-06-30'
-		order by nome;
-        
-        
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
-	from funcionario
-    where dataAdm between'2020-06-01' and
-     '2022-06-30'
-		order by nome;
-        
-        
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
-	from funcionario
-    where salario between 4000 and
-     5000
-		order by nome;
-        
-        
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
- estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
- comissao "Comissão", dataAdm "Data de Admissão"
-	from funcionario
-    where nome like "%Costa"
-		order by nome;
-        
-        
-        
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
-	from funcionario
-    where nome like "%Ana%"
-		order by nome;
-        
+		where salario >= avg(salario)
+			order by nome;
 
-select cpf as "CPF", nome "Funcionário", sexo "Gênero", dataNasc "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", ch "Carga Horária", salario "Salário", 
-	comissao "Comissão", dataAdm "Data de Admissão"
+select avg(salario) from funcionario;
+
+select max(salario) from funcionario;
+
+select min(salario) from funcionario;
+
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
 	from funcionario
-    where nome like "%Costa" or 
-		nome like "%Silva" or
-        nome like "%Oliveira"
+		where salario >= (select avg(salario) from funcionario)
+			order by nome;
+
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
+	from funcionario
+		where salario = (select max(salario) from funcionario)
+			order by nome;
+
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
+	from funcionario
+		where salario = (select min(salario) from funcionario)
+			order by nome;
+
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
+	from funcionario
+		where dataNasc = (select max(dataNasc) from funcionario)
+			order by nome;
+
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+    timestampdiff(year, dataNasc, now()) "Idade",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
+	from funcionario
 		order by nome;
-        
-        
-select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-        order by nome;
-        
-select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-        order by salario+comissao desc;
-        
-        
-select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-    where salario >= avg(salario)
-        order by nome;   
 
-        
-	select avg(salario) from funcionario;
-        
-	select max(salario) from funcionario;
-    
-    select min(salario) from funcionario;
-        
-	select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-    where salario >= (select avg(salario) from funcionario)
-        order by nome;   
-        
 select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-    where salario = (select max(salario) from funcionario)
-        order by nome; 
-        
-select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-    where salario = (select min(salario) from funcionario)
-        order by nome; 
-        
-select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
     timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
     concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
     concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
 	from funcionario
-    where dataNasc = (select max(dataNasc) from funcionario)
-        order by nome; 
-        
-        
+		where timestampdiff(year, dataNasc, now()) = 
+			(select max(timestampdiff(year, dataNasc, now())) from funcionario)
+			order by nome;
+            
 select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
     timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
     concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
     concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
 	from funcionario
-    where timestampdiff(year, dataNasc, now()) = 
-    (select max(timestampdiff(year, dataNasc, now())) from funcionario)
-        order by nome; 
-        
-        
+		where cpf in (select funcionario_cpf from dependente)
+			order by nome;
+            
+select funcionario_cpf from dependente;
+            
 select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
     timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
     concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
     concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão" 
 	from funcionario
-    where  cpf in (select Funcionario_cpf from dependente) 
-        order by nome; 
-        
+		where cpf in (select funcionario_cpf from enderecoFunc 
+							where cidade like "Olinda")
+			order by nome;
+            
+select funcionario_cpf from enderecoFunc where cidade like "Olinda";            
 
-select Funcionario_cpf from dependente;
-        
 select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
     timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
     concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
-    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
-    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão"
-	from funcionario
-    where  cpf in (select Funcionario_cpf from enderecoFunc
-						where cidade like "Olinda") 
-        order by nome;
-        
-	select Funcionario_cpf from enderecoFunc where cidade like "Olinda";
-    
-    
-    select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
-    timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
-    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
     concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
     date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão",
     bairro "Bairro", cidade "Cidade"
 	from funcionario, enderecoFunc
 		order by nome;
-    
--- -----------------------------------------------------
--- ---join inplícito ----
--- -----------------------------------------------------
+        
 select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
     timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
     concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
     concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
     date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão",
     bairro "Bairro", cidade "Cidade"
 	from funcionario, enderecoFunc
-    where cpf = funcionario_cpf
-		order by nome;
-        
--- -----------------------------------------------------
--- ---join explícito ----
--- -----------------------------------------------------
+		where cpf = funcionario_cpf
+			order by nome;
 
 select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
-	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento",
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
     timestampdiff(year, dataNasc, now()) "Idade",
-	estadoCivil "Estado Cívil", email "E-mail", 
-    concat(ch, 'h') "Carga Horária",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
     concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
-	concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
+    date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão",
+    bairro "Bairro", cidade "Cidade"
+	from funcionario
+		join enderecoFunc on cpf = funcionario_cpf
+			order by nome;
+            
+select cpf as "CPF", upper(nome) "Funcionário", sexo "Gênero", 
+	date_format(dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+    timestampdiff(year, dataNasc, now()) "Idade",
+	estadoCivil "Estado Civil", email "E-mail", concat(ch, 'h') "Carga-horária", 
+    concat('R$ ', format(salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(comissao, 2, 'de_DE')) "Comissão", 
     concat('R$ ', format(salario + comissao, 2, 'de_DE')) "Salário Final",
     date_format(dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão",
     bairro "Bairro", cidade "Cidade"
 	from funcionario
 		inner join enderecoFunc on cpf = funcionario_cpf
-		order by nome;
-        
-        
-select dep.cpf "CPF do dependente", dep.nome "Dependente",
+			order by nome;            
+
+select dep.cpf "CPF do Dependente", dep.nome "Dependente", 
 	timestampdiff(year, dep.dataNasc, now()) "Idade do Dependente",
-    dep.parentesco "Parentesco", func.nome "Responsavel"
+    dep.parentesco "Parentesco", func.nome "Responsável"
 	from dependente dep
-    inner join funcionario func on func.cpf = dep.funcionario_cpf
-		order by func.nome;
-    
-select func.cpf "CPF", func.nome "Funcionario",
+		inner join funcionario func on func.cpf = dep.funcionario_cpf
+			order by func.nome;
+
+select func.cpf "CPF", func.nome "Funcionario", 
 	count(dep.cpf) "Quantidade de Dependentes"
     from funcionario func
 		inner join dependente dep on dep.funcionario_cpf = func.cpf
 			group by func.cpf
 				order by func.nome;
-                
-select func.cpf "CPF", func.nome "Funcionario",
+
+select func.cpf "CPF", func.nome "Funcionario", 
 	count(dep.cpf) "Quantidade de Dependentes"
     from funcionario func
 		left join dependente dep on dep.funcionario_cpf = func.cpf
 			group by func.cpf
 				order by func.nome;
-    
-    
+
+select upper(func.nome) "Funcionário", func.cpf as "CPF", func.sexo "Gênero", 
+	date_format(func.dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+    timestampdiff(year, func.dataNasc, now()) "Idade",
+	func.estadoCivil "Estado Civil", func.email "E-mail", concat(func.ch, 'h') "Carga-horária", 
+    concat('R$ ', format(func.salario, 2, 'de_DE')) "Salário", 
+    concat('R$ ', format(func.comissao, 2, 'de_DE')) "Comissão", 
+    concat('R$ ', format(func.salario + func.comissao, 2, 'de_DE')) "Salário Final",
+    date_format(func.dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão", 
+    dep.nome "Departamento", tel.numero "Número de Telefone"
+	from funcionario func
+		inner join trabalhar trb on trb.Funcionario_cpf = func.cpf
+        inner join departamento dep on dep.idDepartamento = trb.Departamento_idDepartamento
+        left join telefone tel on tel.Funcionario_cpf = func.cpf
+			where dataAdm between '2020-06-01' and '2022-06-30'
+				order by func.nome;        
+
+create view RelatorioFunc as
+	select upper(func.nome) "Funcionário", func.cpf as "CPF", func.sexo "Gênero", 
+		date_format(func.dataNasc, '%d/%m/%Y') "Data de Nascimento", 
+		timestampdiff(year, func.dataNasc, now()) "Idade",
+		func.estadoCivil "Estado Civil", func.email "E-mail", concat(func.ch, 'h') "Carga-horária", 
+		concat('R$ ', format(func.salario, 2, 'de_DE')) "Salário", 
+		concat('R$ ', format(func.comissao, 2, 'de_DE')) "Comissão", 
+		concat('R$ ', format(func.salario + func.comissao, 2, 'de_DE')) "Salário Final",
+		date_format(func.dataAdm, '%H:%i - %d/%m/%Y') "Data de Admissão", 
+		dep.nome "Departamento", tel.numero "Número de Telefone"
+		from funcionario func
+			inner join trabalhar trb on trb.Funcionario_cpf = func.cpf
+			inner join departamento dep on dep.idDepartamento = trb.Departamento_idDepartamento
+			left join telefone tel on tel.Funcionario_cpf = func.cpf
+				order by func.nome;
+
+drop view relatoriofunc;
+
+select * from relatoriofunc;
+
+select * from relatoriofunc
+	where `Gênero` = 'f';
+
+select * from relatoriofunc
+	where Departamento like "Frente%";
+
+select dep.nome "Departamento", count(trb.Funcionario_cpf) "Quantidade de Funcionários", 
+	grt.nome "Gerente"
+	from departamento dep
+		inner join trabalhar trb on trb.Departamento_idDepartamento = dep.idDepartamento
+        left join funcionario grt on grt.cpf = dep.Gerente_cpf
+			group by trb.Departamento_idDepartamento
+				order by dep.nome;
+
+
+
+
+
+-- "Data da Venda", "Valor Pago", "Cliente", "Vendedor"
+sel ect date_format(vnd.dataVenda, '%d/%m/%Y - %H:%i') "Data da Venda",
+	concat("R$ ", format(vnd.valorTotal - coalesce(vnd.desconto, 0), 2, 'de_DE')) "Valor Pago",
+    cli.nome "Cliente",
+    func.nome "Vendedor"
+	from venda vnd
+		inner join cliente cli on cli.cpf = vnd.Cliente_cpf
+        inner join funcionario func on func.cpf = vnd.Funcionario_cpf
+			order by vnd.dataVenda;
+
+select func.nome "Vendedor", 
+	count(vnd.idVenda) "Quantidade de Vendas",
+	concat("R$ ", format(sum(vnd.valorTotal - coalesce(vnd.desconto, 0)), 2, 'de_DE')) "Faturamento"
+	from venda vnd
+        inner join funcionario func on func.cpf = vnd.Funcionario_cpf
+			group by func.cpf
+				order by sum(vnd.valorTotal - coalesce(vnd.desconto, 0)) desc;
+
+select func.nome "Vendedor", 
+	count(vnd.idVenda) "Quantidade de Vendas",
+	concat("R$ ", format(sum(vnd.valorTotal - coalesce(vnd.desconto, 0)), 2, 'de_DE')) "Faturamento"
+	from venda vnd
+        inner join funcionario func on func.cpf = vnd.Funcionario_cpf
+			where vnd.dataVenda between '2021-01-01' and '2021-03-31'
+				group by func.cpf
+					order by sum(vnd.valorTotal - coalesce(vnd.desconto, 0)) desc;
+
+select coalesce(endC.cidade, "Não informado") "Cidade", 
+	coalesce(endC.bairro, "Não informado") "Bairro", 
+	count(vnd.idVenda) "Quantidade de Vendas",
+	concat("R$ ", format(sum(vnd.valorTotal - coalesce(vnd.desconto, 0)), 2, 'de_DE')) "Faturamento"
+	from venda vnd
+        inner join cliente cli on cli.cpf = vnd.Cliente_cpf
+        left join enderecocli endC on endC.Cliente_cpf = cli.cpf
+			group by endC.cidade, endC.bairro
+				order by sum(vnd.valorTotal - coalesce(vnd.desconto, 0)) desc;
+
+
+
+
+
+
